@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d1b">
+  <title>VR Camp — выездные VR-развлечения для детских лагерей</title>
+  <meta name="description" content="Выездные VR-развлечения для детских лагерей: шлемы, инструкторы и организация под ключ.">
+  <style>
+:root{
+  --bg:#090d1b; --panel:#111831; --panel2:#0e152b; --text:#f6f8ff;
+  --muted:#a5afc8; --line:rgba(255,255,255,.11); --purple:#795cff;
+  --cyan:#20d8ff; --light:#f5f7fb; --dark:#11182a; --darkmuted:#68738b;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(9,13,27,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.topbar__inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}.brand__mark{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--cyan));font-size:14px}
+.nav{display:flex;gap:26px;color:#c5cde0;font-size:14px}.nav a:hover{color:white}
+.button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:14px;padding:15px 22px;background:linear-gradient(135deg,var(--purple),#587dff);color:white;font-weight:800;cursor:pointer;box-shadow:0 12px 35px rgba(90,88,255,.28);transition:.2s}
+.button:hover{transform:translateY(-1px)}.button--small{padding:11px 15px;font-size:13px}.button--ghost{background:transparent;border:1px solid var(--line);box-shadow:none}
+.hero{position:relative;overflow:hidden;padding:90px 0 86px}.hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.eyebrow{color:#9d8bff;font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(45px,6.3vw,77px);line-height:1.02;letter-spacing:-3.5px;margin:18px 0 24px}h1 span{background:linear-gradient(90deg,#a68fff,#49ddff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(34px,4.3vw,54px);line-height:1.08;letter-spacing:-2px;margin:14px 0 18px}.lead{font-size:20px;color:#bbc4d9;max-width:720px}.lead--dark{color:#5e6982}
+.actions{display:flex;gap:12px;margin:34px 0}.facts{display:flex;gap:34px;flex-wrap:wrap;margin:34px 0 8px}.facts div{display:flex;flex-direction:column}.facts strong{font-size:22px}.facts span,.note{font-size:12px;color:#7f8aa5}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.25}.blob--one{width:460px;height:460px;background:#6748ff;left:-180px;top:30px}.blob--two{width:390px;height:390px;background:#00d5ff;right:-150px;bottom:0}
+.hero-card{border:1px solid var(--line);border-radius:30px;padding:16px;background:linear-gradient(180deg,#121a35,#0b1124);box-shadow:0 35px 90px rgba(0,0,0,.34)}
+.vr-visual{height:430px;border-radius:22px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#202a5a 0,#101735 38%,#080d1d 78%);display:grid;place-items:center}
+.gridlines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent,black 25%,black 70%,transparent)}
+.headset{position:relative;width:260px;height:165px;filter:drop-shadow(0 25px 35px rgba(0,0,0,.45))}.headset__strap{position:absolute;left:48px;right:48px;top:-35px;height:100px;border:22px solid #252d49;border-bottom:0;border-radius:90px 90px 0 0}.headset__body{position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(145deg,#f1f4ff,#aeb8d8);border-radius:50px 50px 65px 65px;display:flex;align-items:center;justify-content:center;gap:28px;box-shadow:inset 0 -10px 25px rgba(42,53,84,.35)}
+.lens{width:64px;height:52px;border-radius:22px;background:radial-gradient(circle at 40% 35%,#7eeaff,#5466ff 28%,#151a35 70%);box-shadow:0 0 25px rgba(75,164,255,.35)}
+.orb{position:absolute;border-radius:50%;filter:blur(2px)}.orb--1{width:130px;height:130px;background:radial-gradient(circle at 35% 35%,#64efff,#2267ff 50%,transparent 72%);left:32px;top:60px;opacity:.7}.orb--2{width:100px;height:100px;background:radial-gradient(circle at 35% 35%,#da8cff,#7344ff 50%,transparent 72%);right:34px;bottom:75px;opacity:.7}
+.vr-title{position:absolute;left:26px;bottom:24px;font-size:13px;letter-spacing:4px;font-weight:900;color:#cfdaff}.chip{position:absolute;padding:9px 12px;border:1px solid rgba(255,255,255,.13);background:rgba(14,20,43,.72);backdrop-filter:blur(10px);border-radius:999px;font-size:10px;font-weight:900;letter-spacing:1px}.chip--1{right:22px;top:38px}.chip--2{left:22px;bottom:115px}.chip--3{right:28px;bottom:34px}
+.hero-card__bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 8px 6px}.hero-card__bottom div{display:flex;flex-direction:column}.hero-card__bottom span{color:#7f8aa5;font-size:11px}.hero-card__bottom strong{font-size:14px}
+.section{padding:96px 0}.section--light{background:var(--light);color:var(--dark)}.section-head{text-align:center;max-width:780px;margin:0 auto 48px}.section-head--left{text-align:left;margin-left:0}.section-head p{color:var(--darkmuted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.steps article{padding:28px;border-radius:20px;background:white;border:1px solid #e5e9f1;box-shadow:0 14px 30px rgba(22,31,52,.05)}.steps b{font-size:12px;color:#7a5fff;letter-spacing:1px}.steps h3{margin:25px 0 10px;font-size:20px}.steps p{color:#69738a;font-size:14px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.cards article{padding:28px;border-radius:22px;background:linear-gradient(180deg,#111a34,#0c1329);border:1px solid var(--line)}.emoji{font-size:28px}.cards h3{margin:22px 0 10px}.cards p{margin:0;color:#9eabc4;font-size:14px}
+.safety{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.checks{display:grid;gap:12px}.checks div{padding:17px 19px;background:white;border:1px solid #e3e8f0;border-radius:14px;box-shadow:0 8px 22px rgba(29,38,59,.04);font-weight:700;color:#30394e}
+.price-box{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center;padding:50px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#121a35,#0c1328)}.price-box p{color:#a7b2c9}.calculator{padding:28px;border-radius:20px;background:#f8faff;color:var(--dark)}.calculator label{font-size:13px;font-weight:800}.calculator input{width:100%;margin:20px 0;accent-color:#735cff}.calc-line{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #e6eaf2}.calc-line span{color:#6d778e}.calc-line--total strong{font-size:22px;color:#5e4ce8}
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:20px}.reviews blockquote{margin:0;padding:28px;background:white;border:1px solid #e3e7ef;border-radius:20px;font-size:18px;font-weight:700}.reviews footer{margin-top:22px;color:#788298;font-size:12px;font-weight:600}
+.contact__grid{display:grid;grid-template-columns:1fr .9fr;gap:70px;align-items:start}.contacts{display:grid;gap:10px;margin-top:28px}.contacts a{font-size:18px;font-weight:800}.contacts span{color:#9eabc4}
+.form{display:grid;gap:14px;padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--panel2)}.form label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#aab5cc}.form input{width:100%;border:1px solid rgba(255,255,255,.13);background:#0b1124;color:white;border-radius:12px;padding:14px 15px;outline:none}.form input:focus{border-color:#765fff}.form-status{min-height:18px;margin:0;font-size:13px;color:#74e7b4}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#7f8ba4}.footer__inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px}
+@media(max-width:900px){.nav{display:none}.hero{padding-top:60px}.hero__grid,.safety,.price-box,.contact__grid{grid-template-columns:1fr}.hero__grid{gap:40px}.hero-card{max-width:620px}.steps,.cards{grid-template-columns:1fr 1fr}.price-box{padding:30px;gap:30px}}
+@media(max-width:600px){.container{width:min(100% - 28px,1160px)}.topbar__inner{height:66px}.topbar .button--small{display:none}.hero{padding:46px 0 62px}h1{font-size:43px;letter-spacing:-2.4px}.lead{font-size:17px}.actions{flex-direction:column}.actions .button{width:100%}.facts{gap:20px}.hero-card{padding:10px;border-radius:22px}.vr-visual{height:330px}.headset{transform:scale(.78)}.hero-card__bottom{grid-template-columns:1fr}.section{padding:70px 0}.steps,.cards,.reviews{grid-template-columns:1fr}.price-box{padding:22px}.footer__inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top"><span class="brand__mark">VR</span><span>Camp</span></a>
+      <nav class="nav">
+        <a href="#how">Как проходит</a>
+        <a href="#safety">Безопасность</a>
+        <a href="#price">Стоимость</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="button button--small" href="#contacts">Пригласить в лагерь</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="blob blob--one"></div><div class="blob blob--two"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="eyebrow">Выездная VR-зона для детских лагерей</div>
+          <h1>Привезём детям <span>виртуальную реальность</span> прямо в лагерь</h1>
+          <p class="lead">VR-шлемы, оборудование и инструкторы — с нас. От лагеря нужны только площадка, электричество и согласованное время.</p>
+          <div class="actions">
+            <a class="button" href="#contacts">Оставить заявку</a>
+            <a class="button button--ghost" href="#price">Узнать стоимость</a>
+          </div>
+          <div class="facts">
+            <div><strong>6+</strong><span>возраст участников*</span></div>
+            <div><strong>5–15 мин</strong><span>один сеанс</span></div>
+            <div><strong>20–200+</strong><span>детей за выезд</span></div>
+          </div>
+          <p class="note">* Возраст и длительность зависят от выбранного контента и правил мероприятия.</p>
+        </div>
+
+        <div class="hero-card">
+          <div class="vr-visual">
+            <div class="gridlines"></div>
+            <div class="orb orb--1"></div><div class="orb orb--2"></div>
+            <div class="headset">
+              <div class="headset__strap"></div>
+              <div class="headset__body">
+                <span class="lens"></span><span class="lens"></span>
+              </div>
+            </div>
+            <div class="chip chip--1">ИГРЫ</div>
+            <div class="chip chip--2">СПОРТ</div>
+            <div class="chip chip--3">ПРИКЛЮЧЕНИЯ</div>
+            <div class="vr-title">VR EVENT</div>
+          </div>
+          <div class="hero-card__bottom">
+            <div><span>Формат</span><strong>Выезд под ключ</strong></div>
+            <div><span>На площадке</span><strong>Инструкторы</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="how">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Просто для лагеря</div>
+          <h2>Как проходит мероприятие</h2>
+          <p>Мы берём организацию на себя — от установки оборудования до помощи каждому участнику.</p>
+        </div>
+        <div class="steps">
+          <article><b>01</b><h3>Приезжаем</h3><p>Привозим VR-шлемы, зарядки, расходники и всё необходимое.</p></article>
+          <article><b>02</b><h3>Готовим зону</h3><p>Проверяем площадку, освобождаем безопасное пространство и настраиваем технику.</p></article>
+          <article><b>03</b><h3>Инструктируем</h3><p>Объясняем правила, подбираем контент и помогаем надеть шлем.</p></article>
+          <article><b>04</b><h3>Играем</h3><p>Дети проходят сеансы по очереди, инструктор постоянно находится рядом.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-head section-head--left">
+          <div class="eyebrow">Контент</div>
+          <h2>Короткие активности с эффектом «вау»</h2>
+          <p>Подбираем программы так, чтобы ребёнку не пришлось долго разбираться в управлении, а очередь двигалась быстро.</p>
+        </div>
+        <div class="cards">
+          <article><span class="emoji">⚡</span><h3>Активные игры</h3><p>Реакция, движение, ритм и динамичные короткие испытания.</p></article>
+          <article><span class="emoji">🏹</span><h3>Приключения</h3><p>Яркие виртуальные миры и простые задания с эффектом присутствия.</p></article>
+          <article><span class="emoji">🏁</span><h3>Мини-турниры</h3><p>Можно считать очки и устраивать соревнования между отрядами.</p></article>
+          <article><span class="emoji">🌍</span><h3>Впечатления</h3><p>Космос, высота, путешествия и необычные сценарии без сложного обучения.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="safety">
+      <div class="container safety">
+        <div>
+          <div class="eyebrow">Под контролем</div>
+          <h2>Безопасность — часть программы</h2>
+          <p class="lead lead--dark">VR должен быть не только зрелищным, но и организованным. Поэтому мы заранее готовим пространство и контролируем каждый сеанс.</p>
+        </div>
+        <div class="checks">
+          <div>✓ Инструктор рядом во время игры</div>
+          <div>✓ Свободная зона без препятствий</div>
+          <div>✓ Обработка контактных поверхностей</div>
+          <div>✓ Ограниченная длительность сеанса</div>
+          <div>✓ Контент подбирается по возрасту</div>
+          <div>✓ Работа по правилам лагеря</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="price">
+      <div class="container">
+        <div class="price-box">
+          <div>
+            <div class="eyebrow">Стоимость</div>
+            <h2>Быстрый ориентировочный расчёт</h2>
+            <p>Ниже стоит демонстрационная цена 300 ₽ за участника. Её можно заменить на вашу реальную схему оплаты: за ребёнка, за час или фиксировано за выезд.</p>
+          </div>
+          <div class="calculator">
+            <label for="kids">Количество детей</label>
+            <input id="kids" type="range" min="20" max="200" step="10" value="80">
+            <div class="calc-line"><span>Участников</span><strong><span id="kidsValue">80</span> детей</strong></div>
+            <div class="calc-line calc-line--total"><span>Ориентир</span><strong id="estimate">24 000 ₽</strong></div>
+            <p class="note">Демо-расчёт. Точную стоимость лучше подтверждать после заявки.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Социальное доказательство</div>
+          <h2>Здесь будут реальные фото и отзывы</h2>
+          <p>После нескольких выездов этот блок лучше всего заполнить живыми фотографиями, названиями лагерей и короткими отзывами администрации.</p>
+        </div>
+        <div class="reviews">
+          <blockquote>«Дети были в восторге, а для нас всё прошло без лишней организационной нагрузки».<footer>Пример отзыва директора лагеря</footer></blockquote>
+          <blockquote>«Очередь двигалась быстро, инструкторы всё объясняли и внимательно следили за детьми».<footer>Пример отзыва вожатого</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacts">
+      <div class="container contact__grid">
+        <div>
+          <div class="eyebrow">Заявка</div>
+          <h2>Пригласить VR Camp в ваш лагерь</h2>
+          <p class="lead">Оставьте контакт и примерное количество детей. После этого можно согласовать дату, формат и стоимость.</p>
+          <div class="contacts">
+            <a href="tel:+79990000000">+7 999 000-00-00</a>
+            <a href="mailto:hello@vrcamp.ru">hello@vrcamp.ru</a>
+            <span>Екатеринбург и Свердловская область</span>
+          </div>
+        </div>
+
+        <form class="form" id="requestForm">
+          <label>Название лагеря<input required type="text" placeholder="Например, «Солнечный»"></label>
+          <label>Контактное лицо<input required type="text" placeholder="Имя"></label>
+          <label>Телефон<input required type="tel" placeholder="+7 ___ ___-__-__"></label>
+          <label>Количество детей<input type="number" min="1" placeholder="Например, 80"></label>
+          <label>Желаемая дата<input type="date"></label>
+          <button class="button" type="submit">Отправить заявку</button>
+          <p id="formStatus" class="form-status"></p>
+          <p class="note">В этой демо-версии форма не отправляет данные. Её можно подключить к Telegram, почте или CRM.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer__inner">
+      <div class="brand"><span class="brand__mark">VR</span><span>Camp</span></div>
+      <span>© 2026. Выездные VR-мероприятия для детских лагерей.</span>
+    </div>
+  </footer>
+
+  <script>
+const range = document.getElementById('kids');
+const value = document.getElementById('kidsValue');
+const estimate = document.getElementById('estimate');
+
+function updatePrice(){
+  const kids = Number(range.value);
+  value.textContent = kids;
+  estimate.textContent = new Intl.NumberFormat('ru-RU').format(kids * 300) + ' ₽';
+}
+range.addEventListener('input', updatePrice);
+updatePrice();
+
+document.getElementById('requestForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formStatus').textContent =
+    'Демо: форма заполнена. На рабочем сайте подключим отправку в Telegram или на почту.';
+});
+</script>
+</body>
+</html>
