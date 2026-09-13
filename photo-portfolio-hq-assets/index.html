@@ -1,1 +1,87 @@
-<!doctype html><meta http-equiv="refresh" content="0; url=./site-v4.html"><title>Portfolio</title><p><a href="./site-v4.html">Открыть портфолио</a></p>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experimental Photography — Portfolio</title>
+<meta name="description" content="Экспериментальная фотография — авторское портфолио.">
+<style>
+:root{--paper:#f8f8f3;--ink:#11130f;--muted:#686b64;--moss:#33462f;--line:#c8cbc2;--pad:clamp(18px,4vw,62px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%;height:100%;object-fit:cover}.wrap{width:min(1450px,100%);margin:auto;padding-inline:var(--pad)}
+body:before{content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+header{height:74px;border-bottom:1px solid rgba(17,19,15,.12);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;z-index:4}.brand{font:13px Arial,sans-serif;letter-spacing:.22em}.brand small{display:block;font-size:7px;letter-spacing:.5em;color:var(--muted);margin-top:5px}.nav{display:flex;gap:30px;font-size:13px}.quick{justify-self:end;font:9px Arial,sans-serif;letter-spacing:.15em;display:flex;gap:12px;color:#4c5049}.quick span{opacity:.35}
+.hero{min-height:720px;padding-block:54px 64px;display:grid;grid-template-columns:minmax(330px,.78fr) minmax(560px,1.22fr);gap:42px;align-items:center;position:relative}.hero-copy{align-self:center;position:relative;z-index:3}.eyebrow{font:9px Arial,sans-serif;letter-spacing:.31em;text-transform:uppercase;margin:0 0 22px;color:#343830}.hero h1{font-size:clamp(58px,6.5vw,96px);font-weight:400;letter-spacing:-.058em;line-height:.82;margin:0 0 34px;max-width:650px}.hero p{max-width:430px;font-size:16px;line-height:1.6;color:#50544d}.cta{display:inline-flex;margin-top:24px;background:var(--moss);color:white;padding:14px 24px;gap:28px;font:9px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.hero-art{height:620px;position:relative}.hero-main{position:absolute;left:12%;top:0;width:69%;height:92%;overflow:hidden;background:#111}.hero-main img{object-position:52% center}.hero-small{position:absolute;z-index:2;background:white;padding:6px;box-shadow:0 9px 28px rgba(0,0,0,.08)}.hero-small.one{left:0;bottom:0;width:31%;height:39%;transform:rotate(-2deg)}.hero-small.two{right:0;top:13%;width:27%;height:34%;transform:rotate(2deg)}.hero-note{position:absolute;z-index:3;right:2%;bottom:15%;font-size:20px;font-style:italic;line-height:1.05;transform:rotate(-8deg)}.hero-index{position:absolute;right:-8px;bottom:0;font:8px Arial,sans-serif;letter-spacing:.18em;line-height:2;text-transform:uppercase;border-left:1px solid var(--line);padding-left:12px}.dots{position:absolute;pointer-events:none;opacity:.13;mix-blend-mode:multiply}.dots.a{left:-165px;top:110px;width:250px}.dots.b{right:-120px;bottom:-90px;width:250px;transform:rotate(18deg)}
+.section{border-top:1px solid var(--line);padding:38px 0 84px}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-bottom:28px}.section-title{display:flex;gap:18px;align-items:center;text-transform:uppercase;font-size:18px;letter-spacing:.12em}.section-title:after{content:"";width:80px;height:1px;background:#777b72}.section-meta{font:9px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.rail{display:flex;gap:18px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}.card{flex:0 0 clamp(250px,25vw,355px);scroll-snap-align:start;cursor:pointer}.card-title{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}.num{font-size:28px;font-style:italic;color:var(--moss)}.card h3{font-weight:400;font-size:21px;margin:0}.card-photo{height:430px;overflow:hidden;background:#ddd}.card-photo img{transition:.5s transform}.card:hover img{transform:scale(1.025)}.tags{margin-top:10px;font:8px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#5c6058}
+.series{margin-top:58px;padding-top:35px;border-top:1px solid #dedfd9;display:grid;grid-template-columns:280px 1fr;gap:38px}.series-copy h3{font-size:36px;font-weight:400;margin:6px 0 15px}.series-copy p{font-size:14px;line-height:1.55;color:var(--muted)}.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(320px,56%);gap:15px;overflow:auto;scroll-snap-type:x mandatory}.gallery img{height:520px;scroll-snap-align:start;cursor:zoom-in}.gallery img:nth-child(2){object-position:center}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding-block:90px}.about-photos{position:relative;height:560px}.ap{position:absolute;overflow:hidden}.ap.a{width:47%;height:53%;left:4%;top:6%;transform:rotate(-2deg)}.ap.b{width:43%;height:47%;right:3%;top:0;transform:rotate(2deg)}.ap.c{width:37%;height:39%;left:31%;bottom:0;transform:rotate(1deg)}.hand{position:absolute;left:3%;bottom:15%;font-style:italic;font-size:21px;transform:rotate(-8deg)}.about-copy{align-self:center}.kicker{font:9px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}.about h2,.contact h2{font-size:clamp(42px,4.4vw,70px);font-weight:400;line-height:.96;letter-spacing:-.035em;margin:18px 0 28px}.about p{font-size:16px;line-height:1.65;color:#4f534c;max-width:590px}.lex{margin-top:28px;font:8px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.contact{border-top:1px solid var(--line);padding:68px 0 34px}.contact-grid{display:grid;grid-template-columns:1.1fr .75fr 1.2fr;gap:42px;align-items:end}.contact-copy{font-size:14px;line-height:1.55;color:var(--muted)}.contact-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-link{border-top:1px solid #92968c;padding-top:12px;font-size:13px}.contact-link small{display:block;font:8px Arial,sans-serif;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}.footer{margin-top:58px;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:20px;font:8px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.lightbox{position:fixed;inset:0;background:rgba(8,9,7,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{width:auto;height:auto;max-width:92vw;max-height:90vh;object-fit:contain}.close{position:absolute;right:25px;top:18px;background:none;border:0;color:white;font-size:35px;cursor:pointer}
+@media(max-width:900px){header{grid-template-columns:1fr 1fr}.nav{display:none}.hero{grid-template-columns:1fr;padding-top:36px}.hero-art{height:600px}.hero-main{left:10%;width:73%}.hero h1{font-size:clamp(56px,13vw,88px)}.series{grid-template-columns:1fr}.gallery{grid-auto-columns:80%}.about{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.contact-links{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:560px){:root{--pad:17px}header{height:65px}.quick{font-size:7px;gap:7px}.quick span{display:none}.hero{min-height:auto;gap:24px}.hero-art{height:480px}.hero-main{left:7%;width:78%;height:88%}.hero-small.one{width:36%;height:34%}.hero-small.two{width:32%;height:30%}.hero-note,.hero-index{display:none}.card{flex-basis:76vw}.card-photo{height:58vh;max-height:450px}.gallery{grid-auto-columns:90%}.gallery img{height:440px}.about-photos{height:430px}.contact-links{grid-template-columns:1fr}.footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="wrap"><a class="brand" href="#top">NAME SURNAME<small>PHOTOGRAPHER</small></a><nav class="nav"><a href="#top">Главная</a><a href="#projects">Проекты</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav><div class="quick"><a href="#contact">TELEGRAM</a><span>/</span><a href="#contact">INSTAGRAM</a><span>/</span><a href="#contact">EMAIL</a></div></header>
+<main id="top">
+<section class="wrap hero"><img class="dots a" src="https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-assets-v1/dots-a.svg" alt=""><div class="hero-copy"><div class="eyebrow">люди / природа / город / вспышка / коллаж</div><h1>Экспериментальная<br>фотография</h1><p>Реальность — лишь один из возможных кадров. Меня интересует то, что происходит между: в расфокусе, в избытке света и в темноте.</p><a class="cta" href="#contact">Связаться <span>→</span></a></div><div class="hero-art"><div class="hero-main"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/blackforest-1.webp" alt="Black Forest"></div><div class="hero-small one"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/angels-1.webp" alt="Angels"></div><div class="hero-small two"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/party-2.webp" alt="Party"></div><div class="hero-note">больше<br>чем<br>реальность</div><div class="hero-index">СВЕТ<br>ДВИЖЕНИЕ<br>ЛЮДИ<br>ПРИРОДА<br>ГОРОД<br>ИСТОРИИ</div></div></section>
+<section class="wrap section" id="projects"><div class="section-head"><div class="section-title">Проекты</div><div class="section-meta">пять историй · один взгляд · листайте вправо</div></div><div class="rail" id="rail"></div><div class="series" id="series"><div class="series-copy"><span class="num" id="snum">01</span><h3 id="stitle">Ангелы</h3><p id="sdesc">Свет, хрупкость, переэкспозиция и зимняя тишина.</p></div><div class="gallery" id="gallery"></div></div></section>
+<section class="wrap about" id="about"><div class="about-photos"><div class="ap a"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/blackforest-1.webp" alt=""></div><div class="ap b"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/night-1.webp" alt=""></div><div class="ap c"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'/%3E" data-asset="assets/industrial-1.webp" alt=""></div><div class="hand">кадры<br>между словами</div></div><div class="about-copy"><div class="kicker">ОБО МНЕ</div><h2>Фотография как способ исследовать чувствительность</h2><p>Я работаю на стыке документального и постановочного, реального и воображаемого. Меня интересуют вспышка, движение, переэкспозиция, случайные кадры и коллаж как способ рассказать историю.</p><p>В моих фотографиях — люди, природа, город, их хрупкость, тьма, шум и красота. Я ищу атмосферу, а не идеальность.</p><div class="lex">ПЛЁНКА / ШУМ / ВСПЫШКА / ДВИЖЕНИЕ / КОЛЛАЖ / АТМОСФЕРА</div></div></section>
+<section class="wrap contact" id="contact"><div class="contact-grid"><div><div class="kicker">КОНТАКТЫ</div><h2>Давайте создадим<br>что-то вместе</h2></div><div class="contact-copy">Открыта к сотрудничеству, творческим проектам и любым интересным идеям.</div><div class="contact-links"><a class="contact-link" href="#"><small>TELEGRAM</small>@name</a><a class="contact-link" href="#"><small>INSTAGRAM</small>@name</a><a class="contact-link" href="mailto:name@email.com"><small>EMAIL</small>name@email.com</a></div></div><div class="footer"><span>NAME SURNAME</span><span>ФОТОГРАФИЯ — ЭТО ТОЖЕ СПОСОБ БЫТЬ БЛИЖЕ</span><span>© 2026</span></div></section>
+</main>
+<div class="lightbox" id="lightbox"><button class="close" id="close">×</button><img id="lbimg" alt=""></div>
+<script>
+const projects=[
+{n:'01',t:'Ангелы',tags:'свет · невинность · переэкспозиция',d:'Свет, хрупкость, переэкспозиция и зимняя тишина.',cover:'assets/angels-1.webp',imgs:['assets/angels-1.webp','assets/angels-1.webp']},
+{n:'02',t:'Black Forest',tags:'мрак · природа · мода',d:'Чёрный силуэт, лес и пространство между портретом и ландшафтом.',cover:'assets/blackforest-1.webp',imgs:['assets/blackforest-1.webp','assets/blackforest-1.webp']},
+{n:'03',t:'Night Creatures',tags:'ночь · инстинкты · сюрреализм',d:'Ночной лес, вспышка, телесность и почти мифологическое ощущение присутствия.',cover:'assets/night-1.webp',imgs:['assets/night-1.webp','assets/night-1.webp']},
+{n:'04',t:'Industrial Diary',tags:'город · фрагменты · коллаж',d:'Транспорт, дворы, промышленные пространства и случайные фрагменты.',cover:'assets/industrial-1.webp',imgs:['assets/industrial-1.webp','assets/industrial-1.webp']},
+{n:'05',t:'Party / Event',tags:'люди · вечеринка · вспышка',d:'Прямая вспышка, лица, жесты и короткие эпизоды внутри ночного события.',cover:'assets/party-2.webp',imgs:['assets/party-2.webp','assets/party-2.webp']}
+];
+
+const assetMap={};
+async function getText(path){
+  const r=await fetch(path,{cache:'force-cache'});
+  if(!r.ok) throw new Error(`Не удалось загрузить ${path}: ${r.status}`);
+  return (await r.text()).replace(/\s+/g,'');
+}
+async function b64(parts){
+  const chunks=await Promise.all(parts.map(getText));
+  return 'data:image/webp;base64,'+chunks.join('');
+}
+function resolveAsset(path){return assetMap[path]||path}
+
+const rail=document.getElementById('rail'), gallery=document.getElementById('gallery'), snum=document.getElementById('snum'),stitle=document.getElementById('stitle'),sdesc=document.getElementById('sdesc');
+function render(i=0){rail.innerHTML='';projects.forEach((p,k)=>{const x=document.createElement('article');x.className='card';x.innerHTML=`<div class="card-title"><span class="num">${p.n}</span><h3>— ${p.t}</h3></div><div class="card-photo"><img src="${resolveAsset(p.cover)}" alt="${p.t}" loading="lazy"></div><div class="tags">${p.tags}</div>`;x.onclick=()=>select(k);rail.appendChild(x)});select(i,false)}
+function select(i,scroll=true){const p=projects[i];snum.textContent=p.n;stitle.textContent=p.t;sdesc.textContent=p.d;gallery.innerHTML='';p.imgs.forEach(src=>{const im=document.createElement('img');im.src=resolveAsset(src);im.loading='lazy';im.onclick=()=>openLB(resolveAsset(src));gallery.appendChild(im)});if(scroll)document.getElementById('series').scrollIntoView({behavior:'smooth',block:'start'})}
+const lb=document.getElementById('lightbox'),lbimg=document.getElementById('lbimg');function openLB(src){lbimg.src=src;lb.classList.add('open')}document.getElementById('close').onclick=()=>lb.classList.remove('open');lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+
+async function boot(){
+  try{
+    const [angels,blackforest,night,industrial,party]=await Promise.all([
+      b64(['b64v6/angels-1-1.txt','b64v6/angels-1-2.txt']),
+      b64(['b64v6/blackforest-1-1.txt']),
+      b64(['b64v6/night-1-1.txt','b64v6/night-1-2.txt']),
+      b64(['b64v6/industrial-1.txt']),
+      b64(['b64v6/party-2.txt'])
+    ]);
+    Object.assign(assetMap,{
+      'assets/angels-1.webp':angels,
+      'assets/blackforest-1.webp':blackforest,
+      'assets/night-1.webp':night,
+      'assets/industrial-1.webp':industrial,
+      'assets/party-2.webp':party
+    });
+    document.querySelectorAll('img[data-asset]').forEach(img=>{img.src=resolveAsset(img.dataset.asset)});
+    render();
+  }catch(err){
+    console.error(err);
+    render();
+    const meta=document.querySelector('.section-meta');
+    if(meta) meta.textContent='ошибка загрузки изображений · обновите страницу';
+  }
+}
+boot();
+</script>
+</body></html>
