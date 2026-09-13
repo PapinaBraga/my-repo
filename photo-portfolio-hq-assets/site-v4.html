@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Экспериментальная фотография — люди, природа, город, вспышка и коллаж." />
+<title>NAME SURNAME — Photographer</title>
+<style>
+:root{--paper:#f8f8f4;--ink:#121411;--muted:#71746c;--moss:#33472d;--line:#c9cbc3;--pad:clamp(20px,4vw,66px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
+.page{position:relative}.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:30;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+.wrap{width:min(1450px,100%);margin:auto;padding-inline:var(--pad)}
+.header{height:82px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid rgba(18,20,17,.12);position:relative;z-index:10}.brand{font-size:15px;letter-spacing:.22em}.brand small{display:block;font-family:Arial,sans-serif;font-size:8px;letter-spacing:.5em;color:var(--muted);margin-top:6px}.nav{display:flex;gap:34px;font-size:14px}.nav a{position:relative}.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--moss);transition:.25s}.nav a:hover:after{right:0}.quick{justify-self:end;display:flex;gap:15px;font:10px Arial,sans-serif;letter-spacing:.18em}.quick span{color:#9b9d96}
+.hero{min-height:690px;display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:30px;align-items:center;position:relative;padding-block:48px 36px}.heroCopy{position:relative;z-index:2}.hero h1{font-weight:400;font-size:clamp(58px,7.2vw,112px);line-height:.78;letter-spacing:-.06em;margin:0 0 38px;max-width:720px}.kicker{font:10px Arial,sans-serif;letter-spacing:.36em;text-transform:uppercase;margin-bottom:28px}.hero p{max-width:430px;font-size:17px;line-height:1.55;color:#4d504a}.cta{margin-top:30px;display:inline-flex;align-items:center;gap:28px;background:var(--moss);color:white;padding:15px 25px;font:10px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;transition:.25s}.cta:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.heroVisual{position:relative;height:min(610px,70vh);min-height:480px;overflow:hidden}.heroMosaic{position:absolute;inset:0;filter:saturate(.9) contrast(.98)}.heroMosaic img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}.scribble{position:absolute;right:2%;top:7%;font-size:25px;font-style:italic;transform:rotate(-9deg);line-height:1.1}.sidewords{position:absolute;right:-22px;bottom:15%;font:9px Arial,sans-serif;line-height:2.2;letter-spacing:.18em;text-transform:uppercase;border-left:1px solid var(--line);padding-left:18px}.dots{position:absolute;pointer-events:none;mix-blend-mode:multiply;opacity:.32;filter:contrast(1.2)}.dotsHero{width:360px;left:30%;bottom:-55px}.dotsEdge{width:260px;left:-190px;top:80px;transform:rotate(8deg)}
+.section{border-top:1px solid var(--line);padding-block:38px 72px;position:relative}.sectionHead{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:28px}.sectionTitle{display:flex;align-items:center;gap:22px;font-size:19px;letter-spacing:.12em;text-transform:uppercase}.sectionTitle:after{content:"";width:80px;height:1px;background:#6e716a}.sectionMeta{font:9px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.projectsViewport{overflow:hidden;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);cursor:grab}.projectsViewport:active{cursor:grabbing}.projects{display:flex;gap:18px;width:max-content;padding-bottom:18px;transition:transform .08s linear}.project{width:clamp(230px,24vw,350px);flex:none}.projectTop{display:flex;align-items:baseline;gap:7px;margin-bottom:10px}.num{color:var(--moss);font-size:28px;font-style:italic}.project h3{font-weight:400;font-size:21px;margin:0}.photo{height:420px;background:#ddd;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s}.project:hover .photo img{transform:scale(1.025);filter:contrast(1.03)}.photo{background-image:var(--projects-img);background-size:300% 200%;background-repeat:no-repeat}.photo.p1{background-position:0% 0%}.photo.p2{background-position:50% 0%}.photo.p3{background-position:100% 0%}.photo.p4{background-position:0% 100%}.photo.p5{background-position:50% 100%}.photo.p6{background-position:100% 100%}.project:hover .photo{filter:contrast(1.04)}.tags{margin-top:11px;font:9px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#5c5f58}.project:nth-child(2) .photo img{filter:grayscale(1)}.project:nth-child(3) .photo img{filter:saturate(.72) contrast(1.12)}.scrollCue{display:flex;align-items:center;justify-content:flex-end;gap:16px;font:10px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}.arrows{font-size:24px;color:var(--ink);letter-spacing:.25em}.projectBar{height:1px;background:#d2d4cc;margin-top:16px;position:relative;overflow:hidden}.projectBar b{position:absolute;left:0;top:0;height:1px;width:22%;background:var(--moss);transition:left .15s}
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(42px,8vw,120px);align-items:center;padding-block:88px 100px;position:relative}.aboutCollage{position:relative;height:560px}.tile{position:absolute;box-shadow:0 1px 0 rgba(0,0,0,.04)}.tile img{width:100%;height:100%;object-fit:cover}.sprite{background-image:var(--projects-img);background-size:300% 200%;background-repeat:no-repeat}.sprite.s2{background-position:50% 0%}.sprite.s3{background-position:100% 0%}.sprite.s4{background-position:0% 100%}.t1{width:44%;height:51%;left:7%;top:9%;transform:rotate(-2deg)}.t2{width:40%;height:46%;right:5%;top:0;transform:rotate(2deg);filter:grayscale(1)}.t3{width:34%;height:39%;left:34%;bottom:1%;transform:rotate(1deg)}.tape{position:absolute;width:86px;height:28px;background:#d8ccb0;opacity:.5;right:29%;top:42%;transform:rotate(-17deg)}.hand{position:absolute;left:2%;bottom:14%;font-size:22px;font-style:italic;transform:rotate(-7deg)}.root{position:absolute;width:68%;height:1px;background:#7f817a;left:50%;bottom:-16px;transform:translateX(-50%)}.root:before,.root:after{content:"";position:absolute;width:38%;height:1px;background:#7f817a;top:0}.root:before{left:15%;transform:rotate(8deg);transform-origin:left}.root:after{right:8%;transform:rotate(-10deg);transform-origin:right}.aboutText .eyebrow,.contact .eyebrow{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase}.aboutText h2{font-size:clamp(42px,4.4vw,72px);line-height:.96;font-weight:400;letter-spacing:-.035em;margin:18px 0 28px}.aboutText p{font-size:16px;line-height:1.65;max-width:600px;color:#4c4f48}.lexicon{margin-top:36px;display:flex;gap:18px;flex-wrap:wrap;font:9px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#74776f}.lexicon span:after{content:" /";color:#b3b5ae}.dotsAbout{width:260px;right:-170px;top:20%;opacity:.23;transform:rotate(12deg)}
+.contact{border-top:1px solid var(--line);padding-block:68px 36px;position:relative}.contactGrid{display:grid;grid-template-columns:1.15fr .8fr 1.05fr;gap:50px;align-items:end}.contact h2{font-size:clamp(42px,5vw,74px);font-weight:400;line-height:.92;letter-spacing:-.04em;margin:18px 0 0}.contactText{font-size:15px;line-height:1.55;color:#595c55}.contactLinks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contactLink{border-top:1px solid #8f9289;padding-top:14px}.contactLink small{display:block;font:9px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#74776f;margin-bottom:8px}.contactLink strong{font-size:14px;font-weight:400}.footer{border-top:1px solid var(--line);margin-top:62px;padding:22px 0 0;display:flex;justify-content:space-between;gap:20px;font:9px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}.dotsFooter{width:250px;right:-130px;bottom:-70px;opacity:.23}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.on{opacity:1;transform:none}
+@media(max-width:900px){.header{grid-template-columns:1fr 1fr}.nav{display:none}.quick{font-size:8px}.hero{grid-template-columns:1fr;padding-top:28px}.heroVisual{height:62vh;min-height:430px}.hero h1{font-size:clamp(54px,14vw,90px)}.sidewords{right:8px}.dotsHero{left:-70px}.about{grid-template-columns:1fr}.aboutCollage{height:500px}.contactGrid{grid-template-columns:1fr}.contactLinks{grid-template-columns:1fr 1fr 1fr}.photo{height:360px}}
+@media(max-width:560px){:root{--pad:18px}.header{height:68px}.brand{font-size:12px}.quick{gap:8px}.quick span{display:none}.hero{min-height:auto}.heroVisual{min-height:390px}.hero h1{line-height:.82;margin-bottom:25px}.hero p{font-size:15px}.scribble{font-size:19px}.kicker{line-height:1.8}.sectionHead{align-items:flex-start}.sectionMeta{display:none}.project{width:74vw}.photo{height:55vh;max-height:430px}.about{padding-block:64px}.aboutCollage{height:430px}.aboutText p{font-size:15px}.contactLinks{grid-template-columns:1fr}.footer{flex-direction:column}.dotsAbout,.dotsFooter{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.photo img{transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="grain"></div>
+<header class="wrap header">
+  <a class="brand" href="#top">NAME SURNAME<small>PHOTOGRAPHER</small></a>
+  <nav class="nav"><a href="#top">Главная</a><a href="#projects">Проекты</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav>
+  <div class="quick"><a href="#contact">TELEGRAM</a><span>/</span><a href="#contact">INSTAGRAM</a><span>/</span><a href="#contact">EMAIL</a></div>
+</header>
+<main id="top">
+<section class="wrap hero">
+  <img class="dots dotsEdge" src="https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-assets-v1/dots-a.svg" alt="" />
+  <div class="heroCopy reveal">
+    <div class="kicker">люди &nbsp;/&nbsp; природа &nbsp;/&nbsp; город &nbsp;/&nbsp; вспышка &nbsp;/&nbsp; коллаж</div>
+    <h1>Экспериментальная<br>фотография</h1>
+    <p>Реальность — лишь один из возможных кадров. Меня интересует то, что происходит между: в расфокусе, в избытке света и в темноте.</p>
+    <a class="cta" href="#contact">Связаться <span>→</span></a>
+  </div>
+  <div class="heroVisual reveal">
+    <div class="heroMosaic" role="img" aria-label="Экспериментальный зимний портрет"><img src="" data-hq="hero" alt="Экспериментальный зимний портрет"></div>
+    <div class="scribble">больше<br>чем<br>реальность</div>
+    <div class="sidewords">свет<br>движение<br>люди<br>природа<br>город<br>истории</div>
+    <img class="dots dotsHero" src="https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-assets-v1/dots-a.svg" alt="" />
+  </div>
+</section>
+<section class="wrap section" id="projects">
+  <div class="sectionHead reveal"><div class="sectionTitle">Проекты</div><div class="sectionMeta">шесть историй · один взгляд · листайте вправо</div></div>
+  <div class="projectsViewport" id="viewport">
+    <div class="projects" id="track">
+      <article class="project reveal"><div class="projectTop"><span class="num">01</span><h3>Ангелы</h3></div><div class="photo p1" role="img" aria-label="Ангелы"></div><div class="tags">свет · невинность · переэкспозиция</div></article>
+      <article class="project reveal"><div class="projectTop"><span class="num">02</span><h3>Black Forest</h3></div><div class="photo p2" role="img" aria-label="Black Forest"></div><div class="tags">мрак · природа · мода</div></article>
+      <article class="project reveal"><div class="projectTop"><span class="num">03</span><h3>Night Creatures</h3></div><div class="photo p3" role="img" aria-label="Night Creatures"></div><div class="tags">ночь · инстинкты · сюрреализм</div></article>
+      <article class="project reveal"><div class="projectTop"><span class="num">04</span><h3>Industrial Diary</h3></div><div class="photo p4" role="img" aria-label="Industrial Diary"></div><div class="tags">город · фрагменты · коллаж</div></article>
+      <article class="project reveal"><div class="projectTop"><span class="num">05</span><h3>Party / Event</h3></div><div class="photo p5" role="img" aria-label="Party Event"></div><div class="tags">люди · вечеринка · вспышка</div></article>
+      <article class="project reveal"><div class="projectTop"><span class="num">06</span><h3>Flash Diary</h3></div><div class="photo p6" role="img" aria-label="Flash Diary"></div><div class="tags">документальное · близость · шум</div></article>
+    </div>
+  </div>
+  <div class="projectBar"><b id="bar"></b></div>
+  <div class="scrollCue">перетаскивайте / колесо мыши <span class="arrows">← →</span></div>
+</section>
+<section class="wrap about" id="about">
+  <div class="aboutCollage reveal">
+    <div class="tile t1 sprite s3" role="img" aria-label="Ночной лес"></div>
+    <div class="tile t2 sprite s2" role="img" aria-label="Черно-белый портрет"></div>
+    <div class="tile t3 sprite s4" role="img" aria-label="Городской фрагмент"></div>
+    <div class="tape"></div><div class="hand">кадры<br>между<br>словами</div><div class="root"></div>
+  </div>
+  <div class="aboutText reveal">
+    <div class="eyebrow">Обо мне</div>
+    <h2>Фотография как способ исследовать чувствительность</h2>
+    <p>Я работаю на стыке документального и постановочного, реального и воображаемого. Меня интересуют вспышка, движение, переэкспозиция, случайные кадры и коллаж как способ рассказать историю.</p>
+    <p>В моих фотографиях — люди, природа, город, их хрупкость, тьма, шум и красота. Я ищу атмосферу, а не идеальность.</p>
+    <div class="lexicon"><span>плёнка</span><span>шум</span><span>вспышка</span><span>движение</span><span>коллаж</span><span>атмосфера</span></div>
+  </div>
+  <img class="dots dotsAbout" src="https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-assets-v1/dots-a.svg" alt="" />
+</section>
+<section class="wrap contact" id="contact">
+  <div class="contactGrid">
+    <div class="reveal"><div class="eyebrow">Контакты</div><h2>Давайте создадим<br>что-то вместе</h2></div>
+    <p class="contactText reveal">Открыта к сотрудничеству, творческим проектам и любым интересным идеям.</p>
+    <div class="contactLinks reveal">
+      <a class="contactLink" href="#"><small>Telegram</small><strong>@name</strong></a>
+      <a class="contactLink" href="#"><small>Instagram</small><strong>@name</strong></a>
+      <a class="contactLink" href="mailto:name@email.com"><small>Email</small><strong>name@email.com</strong></a>
+    </div>
+  </div>
+  <img class="dots dotsFooter" src="https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-assets-v1/dots-a.svg" alt="" />
+  <footer class="footer"><span>NAME SURNAME</span><span>Фотография — это тоже способ быть ближе</span><span>© 2026</span></footer>
+</section>
+</main>
+</div>
+<script>
+const vp=document.getElementById('viewport'),bar=document.getElementById('bar');let down=false,startX=0,startScroll=0;
+function sync(){const max=vp.scrollWidth-vp.clientWidth;const p=max?vp.scrollLeft/max:0;bar.style.left=(p*78)+'%'}
+vp.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){vp.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false});
+vp.addEventListener('pointerdown',e=>{down=true;startX=e.clientX;startScroll=vp.scrollLeft;vp.setPointerCapture(e.pointerId)});vp.addEventListener('pointermove',e=>{if(down)vp.scrollLeft=startScroll-(e.clientX-startX)});vp.addEventListener('pointerup',()=>down=false);vp.addEventListener('pointercancel',()=>down=false);vp.addEventListener('scroll',sync,{passive:true});sync();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=Math.min(i%6*.06,.24)+'s';io.observe(el)});
+</script>
+<script>
+(async()=>{
+ const B='https://raw.githubusercontent.com/PapinaBraga/my-repo/main/photo-portfolio-hq-assets/';
+ async function load(stem,n){const a=await Promise.all(Array.from({length:n},(_,i)=>fetch(B+stem+'-'+(i+1)+'.txt?v=20260914',{cache:'force-cache'}).then(r=>{if(!r.ok)throw Error(r.status);return r.text()})));return 'data:image/webp;base64,'+a.join('')}
+ try{const [h,p]=await Promise.all([load('v2-hero',5),load('v3-projects',4)]);document.querySelector('[data-hq="hero"]').src=h;document.documentElement.style.setProperty('--projects-img','url("'+p+'")')}catch(e){console.error('HQ assets failed',e)}
+})();
+</script>
+</body></html>
